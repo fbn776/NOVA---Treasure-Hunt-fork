@@ -11,7 +11,7 @@ const textNodes = [
 				text: "Start",
 				nextText: 1,
         onclick: ()=>{
-          alert('Game start')
+          userData.start = Date.now();
         },
 			},
 			{
@@ -419,6 +419,9 @@ const textNodes = [
 					currentState.NEU,
 				setState: { P2F: true },
 				nextText: 132,
+        onclick: ()=>{
+          userData.end = Date.now();
+        },
 			},
 		],
 	},

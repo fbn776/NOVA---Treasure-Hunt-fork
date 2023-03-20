@@ -10,7 +10,7 @@ const nameInput = s('#nameInput');
 function getStarted() {
 	if(!nameInput.value) {
 		alert('Name cannot be empty! Please try again')
-		return false
+		return false;
 	}
 	userData.name = nameInput.value;
 	startMenu.style.transform = 'scale(0) translateY(100%)';
