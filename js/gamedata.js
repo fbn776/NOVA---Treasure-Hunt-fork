@@ -11,7 +11,7 @@ const textNodes = [
 				text: "Start",
 				nextText: 1,
         onclick: ()=>{
-          alert('hello')
+          alert('Game start')
         },
 			},
 			{
