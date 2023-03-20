@@ -11,6 +11,10 @@ const textNodes = [
 				text: "Start",
 				nextText: 1,
         onclick: ()=>{
+          if(userData.start) {
+            return false;
+          }
+
           userData.start = Date.now();
         },
 			},
@@ -421,6 +425,8 @@ const textNodes = [
 				nextText: 132,
         onclick: ()=>{
           userData.end = Date.now();
+          let data = JSON.stringify(userData)
+          new QRCode(userQR, data);
         },
 			},
 		],

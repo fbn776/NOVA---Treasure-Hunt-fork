@@ -1,11 +1,13 @@
 const userData = {
 	name: null,
 	start: null,
-	endTime: null,
+	end: null,
 };
 const mainCont = s(".main-cont");
 const startMenu = s('.start-menu');
 const nameInput = s('#nameInput');
+
+let userQR = createElement('div');
 
 function getStarted() {
 	if(!nameInput.value) {
