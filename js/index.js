@@ -1,50 +1,78 @@
-const textElement = document.getElementById('text')
-const optionButtonsElement = document.getElementById('option-buttons')
-const qImgElement = document.getElementById('qpic')
+const mainCont = s(".main-cont");
 
+let lastVisited;
 
-let state = {}
+let state = {};
 
 function startGame() {
-  state = {}
-  showTextNode(0)
+	state = {};
+	showTextNode(0);
 }
 
 function showTextNode(textNodeIndex) {
-  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-  textElement.innerText = textNode.text;
-  var ritem = qImgElement.childNodes[0];
-  var img = document.createElement('img');
-  let img_dir = "images/";
-  img.src = img_dir.concat(textNode.image);
-  img.width = 300;
-  qImgElement.replaceChild(img, ritem);
-  while (optionButtonsElement.firstChild) {
-    optionButtonsElement.removeChild(optionButtonsElement.firstChild)
-  }
+	const textNode = textNodes.find((textNode) => textNode.id === textNodeIndex);
+	
+	//Animation code;
+	let animSign = (lastVisited || {}).id > textNode.id ? "-" : "";
+	let negAnimSign = (animSign === '-'?'':'-');
+	for (a of mainCont.children) {
+		a.style.transform = `translateX(${negAnimSign}100%) scale(0)`;
+		//Remove the previous element when it finishes its transition
+		a.addEventListener("transitionend", ()=>{
+			a.remove();
+		})
+	}
 
-  textNode.options.forEach(option => {
-    if (showOption(option)) {
-      const button = document.createElement('button')
-      button.innerText = option.text
-      button.classList.add('btn')
-      button.addEventListener('click', () => selectOption(option))
-      optionButtonsElement.appendChild(button)
-    }
-  })
+	let container = createElement("div", "container", "mainCont");
+	//Move the container out of the screen for animation start
+	container.style.transform = `translateX(${animSign}100%) scale(0)`;
+
+	let qPic = createElement("div", "qpic");
+	let qImg = createElement("img");
+
+	let text = createElement("div", "test-des", "text");
+	let optBtns = createElement("div", "btn-grid", "option-buttons");
+
+	text.innerText = textNode.text;
+	let img_dir = "images/";
+	qImg.src = img_dir.concat(textNode.image);
+	qImg.width = 300;
+
+	qPic.appendChild(qImg);
+
+	textNode.options.forEach((option) => {
+		if (showOption(option)) {
+			const button = document.createElement("button");
+			button.innerText = option.text;
+			button.classList.add("btn");
+			button.addEventListener("click", () => selectOption(option));
+			optBtns.appendChild(button);
+		}
+	});
+
+	container.appendChild(qPic);
+	container.appendChild(text);
+	container.appendChild(optBtns);
+
+	mainCont.appendChild(container);
+	setTimeout(() => {
+		container.style.transform = "translateX(0px) scale(1)";
+	});
+
+	lastVisited = JSON.parse(JSON.stringify(textNode));
 }
 
 function showOption(option) {
-  return option.requiredState == null || option.requiredState(state)
+	return option.requiredState == null || option.requiredState(state);
 }
 
 function selectOption(option) {
-  const nextTextNodeId = option.nextText
-  if (nextTextNodeId <= 0) {
-    return startGame()
-  }
-  state = Object.assign(state, option.setState)
-  showTextNode(nextTextNodeId)
+	const nextTextNodeId = option.nextText;
+	if (nextTextNodeId <= 0) {
+		return startGame();
+	}
+	state = Object.assign(state, option.setState);
+	showTextNode(nextTextNodeId);
 }
 
-startGame()
+startGame();

@@ -12,20 +12,34 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: #333;
-    /* background-image: url('../images/beautiful-shining-stars-night-sky.jpg'); */
+    overflow: hidden;
     background-size: 100%;
 }
 
+.main-cont {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
 .container {
+    position: absolute;
     width: 800px;
     max-width: 80%;
     background-color: rgba(76, 119, 175, 0.3);
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px 2px;
-    z-index: 1000;
     text-align: center;
     color: white;
+    transition: transform 0.3s ease-in;
+}
+
+.container .qpic {
+    margin: 10px 0px 20px 0px;
 }
 
 .btn-grid {
@@ -42,6 +56,7 @@ body {
     padding: 5px 10px;
     color: white;
     outline: none;
+    transition: 0.2s;
 }
 
 .btn:hover {
