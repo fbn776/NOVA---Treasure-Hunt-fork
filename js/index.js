@@ -3,13 +3,26 @@ const userData = {
 	start: null,
 	endTime: null,
 };
+const mainCont = s(".main-cont");
+const startMenu = s('.start-menu');
+const nameInput = s('#nameInput');
+
+function getStarted() {
+	if(!nameInput.value) {
+		alert('Name cannot be empty! Please try again')
+		return false
+	}
+	userData.name = nameInput.value;
+	startMenu.style.transform = 'scale(0) translateY(100%)';
+	startMenu.addEventListener("transitionend", () => {
+		startMenu.style.display = 'none'
+	});
+}
+
 
 //ID of the page to be displayed first.
 const startPageID = 0;
-const mainCont = s(".main-cont");
-
 let lastVisited;
-
 let state = {};
 
 function startGame() {

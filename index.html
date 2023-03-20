@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+		<script defer src="js/lib.js"></script>
+		<script defer src="js/gamedata.js"></script>
+		<script defer src="js/index.js"></script>
 
-    <script defer src="js/lib.js"></script>
-    <script defer src="js/gamedata.js"></script>
-    <script defer src="js/index.js"></script>
+		<link rel="icon" href="images/astral1.png" type="image/gif" sizes="16x16" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Online Treasure hunt</title>
+	</head>
 
-    <link rel="icon" href="images/astral1.png" type="image/gif" sizes="16x16">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <title>Online Treasure hunt</title>
-</head>
-
-<body>
-    <div id="background"></div>
-    <div id="midground"></div>
-    <div id="foreground"></div>
-
-    <div class="main-cont"></div>
-</body>
-
+	<body>
+        <div class="start-menu full-flex">
+            <div class="start-menu-cont">
+                <img src="images/astronaut.png" width="30%"><br>
+                <p>
+                    Enter your name here to start the game. The same name should be used while filling the google forms.
+                </p><br>
+                <input type="text" id="nameInput" placeholder="Enter here"><br><br>
+                <button onclick="getStarted()">Get started</button>
+            </div>
+        </div>
+		<div class="game">
+			<div id="background"></div>
+			<div id="midground"></div>
+			<div id="foreground"></div>
+			<div class="main-cont full-flex"></div>
+		</div>
+	</body>
 </html>
