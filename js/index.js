@@ -1,3 +1,5 @@
+const KEY = 'TESTKEY'; ///KEY for encryption and decryption
+
 const userData = {
 	name: null,
 	start: null,

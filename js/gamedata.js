@@ -34,7 +34,7 @@ const textNodes = [
 			},
 			{
 				text: "Are you curious? Let's see where it takes us",
-				nextText: 2,
+				nextText: 132//2,
 			},
 		],
 	},
@@ -389,28 +389,28 @@ const textNodes = [
 				text: "⟒⌖⍜⌿⌰⏃⋏⟒⏁⌇",
 				requiredState: (currentState) => !currentState.EP,
 				setState: { EP: true },
-				nextText: 90,
+				nextText: 123//90,
 			},
 			{
 				// Neutron
 				text: "⋏⟒⎍⏁⍀⍜⋏ ⌇⏁⏃⍀",
 				requiredState: (currentState) => !currentState.NEU,
 				setState: { NEU: true },
-				nextText: 75,
+				nextText: 123//75,
 			},
 			{
 				// Red Sup
 				text: "⍀⟒⎅ ⌇⎍⌿⟒⍀☌⟟⏃⋏⏁",
 				requiredState: (currentState) => !currentState.RS,
 				setState: { RS: true },
-				nextText: 102,
+				nextText: 123//102,
 			},
 			{
 				// SAG
 				text: "⌇⏃☌⟟⏁⏁⏃⍀⟟⎍⌇ ⏃*",
 				requiredState: (currentState) => !currentState.SAG,
 				setState: { SAG: true },
-				nextText: 114,
+				nextText: 123//114,
 			},
 			{
 				// Move to docs
@@ -425,7 +425,8 @@ const textNodes = [
 				onclick: () => {
 					userData.end = Date.now();
 					let data = JSON.stringify(userData);
-					new QRCode(userQR, data);
+					data = encryptData(data, KEY);
+					new QRCode(userQR, data.str);
 				},
 			},
 		],
