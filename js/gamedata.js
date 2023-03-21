@@ -1,5 +1,4 @@
-const registerLink = 'https://forms.gle/cfxtTFvN8LG1sC239';
-
+const registerLink = "https://forms.gle/cfxtTFvN8LG1sC239";
 
 const textNodes = [
 	{
@@ -10,17 +9,17 @@ const textNodes = [
 			{
 				text: "Start",
 				nextText: 1,
-        onclick: ()=>{
-          if(userData.start) {
-            return false;
-          }
+				onclick: () => {
+					if (userData.start) {
+						return false;
+					}
 
-          userData.start = Date.now();
-        },
+					userData.start = Date.now();
+				},
 			},
 			{
 				text: "May be later!",
-				nextText: 'info',
+				nextText: "info",
 			},
 		],
 	},
@@ -423,11 +422,11 @@ const textNodes = [
 					currentState.NEU,
 				setState: { P2F: true },
 				nextText: 132,
-        onclick: ()=>{
-          userData.end = Date.now();
-          let data = JSON.stringify(userData)
-          new QRCode(userQR, data);
-        },
+				onclick: () => {
+					userData.end = Date.now();
+					let data = JSON.stringify(userData);
+					new QRCode(userQR, data);
+				},
 			},
 		],
 	},
