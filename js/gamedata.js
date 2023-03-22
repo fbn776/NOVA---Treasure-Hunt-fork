@@ -283,7 +283,7 @@ const textNodes = [
 	{
 		id: 16,
 		text: "We're off to Mars next! How many moons does this red planet have? Hint: It's not zero, but it's not a lot either!",
-		image: "mars.png",
+		image: "mars.jpg",
 		options: [
 			{
 				text: "None, it's all alone out there",
