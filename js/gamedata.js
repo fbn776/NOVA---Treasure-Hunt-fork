@@ -34,7 +34,7 @@ const textNodes = [
 			},
 			{
 				text: "Are you curious? Let's see where it takes us",
-				nextText: 132//2,
+				nextText: 2,
 			},
 		],
 	},
@@ -389,28 +389,28 @@ const textNodes = [
 				text: "⟒⌖⍜⌿⌰⏃⋏⟒⏁⌇",
 				requiredState: (currentState) => !currentState.EP,
 				setState: { EP: true },
-				nextText: 123//90,
+				nextText: 90,
 			},
 			{
 				// Neutron
 				text: "⋏⟒⎍⏁⍀⍜⋏ ⌇⏁⏃⍀",
 				requiredState: (currentState) => !currentState.NEU,
 				setState: { NEU: true },
-				nextText: 123//75,
+				nextText: 75,
 			},
 			{
 				// Red Sup
 				text: "⍀⟒⎅ ⌇⎍⌿⟒⍀☌⟟⏃⋏⏁",
 				requiredState: (currentState) => !currentState.RS,
 				setState: { RS: true },
-				nextText: 123//102,
+				nextText: 102,
 			},
 			{
 				// SAG
 				text: "⌇⏃☌⟟⏁⏁⏃⍀⟟⎍⌇ ⏃*",
 				requiredState: (currentState) => !currentState.SAG,
 				setState: { SAG: true },
-				nextText: 123//114,
+				nextText: 114,
 			},
 			{
 				// Move to docs
@@ -423,10 +423,16 @@ const textNodes = [
 				setState: { P2F: true },
 				nextText: 132,
 				onclick: () => {
-					userData.end = Date.now();
-					let data = JSON.stringify(userData);
-					data = encryptData(data, KEY);
-					new QRCode(userQR, data.str);
+					if (!userData.end) {
+						userData.end = new Date(Date.now()).toString();
+						let data = JSON.stringify(userData);
+						data = encryptData(data, KEY);
+						new QRCode(userQR, {
+							text: data.str,
+						});
+						qrText.value = data.str;
+					}
+					openQrDownloadPage(userQR);
 				},
 			},
 		],
@@ -434,7 +440,7 @@ const textNodes = [
 	// Meeting point 1
 	{
 		id: 22,
-		text: " Hmm.. the options seems to be in some unknow language. Ready to make a leap of faith? Let's see where it takes us",
+		text: " Hmm.. the options seems to be in some unknown language. Ready to make a leap of faith? Let's see where it takes us",
 		image: "alienAst.jpg",
 		options: [
 			{

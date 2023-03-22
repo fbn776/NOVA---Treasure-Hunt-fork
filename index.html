@@ -5,13 +5,17 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="css/style.css" />
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.10/clipboard.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"
+			integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o="
+			crossorigin="anonymous"
+		></script>
 		<script defer src="js/lib.js"></script>
 		<script defer src="js/gamedata.js"></script>
 		<script defer src="js/index.js"></script>
-        <script src="js/qrcode.min.js"></script>
-        
+		<script src="js/qrcode.min.js"></script>
+
 		<link rel="icon" href="images/astral1.png" type="image/gif" sizes="16x16" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -23,20 +27,72 @@
 	</head>
 
 	<body>
-        <div class="start-menu full-flex">
-            <div class="start-menu-cont">
-                <img src="images/astronaut.png" width="30%"><br>
-                <p>
-                    Enter your name here to start the game. The same name should be used while filling the google forms.
-                </p><br>
-                <input type="text" id="nameInput" placeholder="Enter here"><br><br>
-                <button onclick="getStarted()">Get started</button>
-            </div>
-        </div>
+		<div class="menu-window full-flex qr-download-menu">
+			<div class="start-menu-cont">
+				<br />
+				<p>Download this QR and upload this over on the submission form</p>
+				<div id="qrCont" class="full-flex"></div>
+				<br />
+				<p>And... Copy this text; you need to paste this text over on the submission form</p>
+				<div style="width: 100%; display: flex; justify-content: center;">
+					<div class="textBox">
+						<input class="text" id="qrText">
+						<button onclick="copyText(qrText)"><img src="images/copy.png" /></button>
+					</div>
+				</div>
+				<br />
+				<button style="padding: 10px 15px" onclick="downloadQR()">
+					Download
+				</button>
+				<button style="padding: 10px 15px" onclick="closeQrDownloadPage()">
+					Close
+				</button>
+			</div>
+		</div>
+
+		<div class="rules-menu menu-window full-flex">
+			<div class="start-menu-cont">
+				<img src="images/info.png" width="20%" /><br />
+				<ul class="help-ul">
+					<li>Rule 1....</li>
+					<li>Rule 2....</li>
+					<li>Rule 3....</li>
+					<li>Rule 4....</li>
+					<li>Rule 5....</li>
+					<li>Rule 6....</li>
+					<li>Rule 7....</li>
+				</ul>
+				<br />
+				<button style="padding: 10px 15px" onclick="closeRulesPage()">
+					I Understand
+				</button>
+			</div>
+		</div>
+
+		<div class="menu-window start-menu full-flex">
+			<div class="start-menu-cont">
+				<img src="images/astronaut.png" width="30%" /><br />
+				<p>
+					Enter your name here to start the game. The same name should be used
+					while filling the google forms.
+				</p>
+				<br />
+				<input
+					type="text"
+					id="nameInput"
+					placeholder="Enter here"
+				/><br /><br />
+				<button onclick="getStarted()">Get started</button>
+			</div>
+		</div>
+
 		<div class="game">
 			<div id="background"></div>
 			<div id="midground"></div>
 			<div id="foreground"></div>
+			<div class="rules-btn full-flex" onclick="openRulesPage()">
+				<img src="images/info-i.png" />
+			</div>
 			<div class="main-cont full-flex"></div>
 		</div>
 	</body>

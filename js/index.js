@@ -1,28 +1,75 @@
-const KEY = 'TESTKEY'; ///KEY for encryption and decryption
+const KEY = "TESTKEY"; ///KEY for encryption and decryption
 
 const userData = {
 	name: null,
 	start: null,
 	end: null,
 };
-const mainCont = s(".main-cont");
-const startMenu = s('.start-menu');
-const nameInput = s('#nameInput');
 
-let userQR = createElement('div');
+
+const mainCont = s(".main-cont");
+const startMenu = s(".start-menu");
+const nameInput = s("#nameInput");
+const rulesPage = s(".rules-menu");
+const qrPage = s('.qr-download-menu');
+const qrContElm = s('#qrCont');
+const qrDownloadBtn = s("#qrDownloadBtn");
+const qrText = s('#qrText');
+let userQR = createElement("div");
+
+function closeRulesPage() {
+	rulesPage.style.transform = "translateY(100%)";
+	setTimeout(() => {
+		rulesPage.style.display = "none";
+	}, 300);
+}
+
+function openRulesPage() {
+	rulesPage.style.display = "flex";
+	setTimeout(() => {
+		rulesPage.style.transform = "translateY(0px)";
+	}, 0);
+}
 
 function getStarted() {
-	if(!nameInput.value) {
-		alert('Name cannot be empty! Please try again')
+	if (!nameInput.value) {
+		alert("Name cannot be empty! Please try again");
 		return false;
 	}
+	if(!isName(nameInput.value)){
+		alert("Name should only contain alphabetic characters and spaces")
+		return false;
+	}
+
 	userData.name = nameInput.value;
-	startMenu.style.transform = 'scale(0) translateY(100%)';
+	startMenu.style.transform = "scale(0) translateY(100%)";
 	startMenu.addEventListener("transitionend", () => {
-		startMenu.style.display = 'none'
+		startMenu.style.display = "none";
 	});
 }
 
+function openQrDownloadPage(qr){
+	if(qrContElm.children.length === 0){
+		qrContElm.appendChild(userQR);
+	}
+
+	qrPage.style.display = "flex";
+	setTimeout(() => {
+		qrPage.style.transform = "translateY(0px)";
+	}, 0);
+}
+
+function closeQrDownloadPage(){
+	qrPage.style.transform = "translateY(100%)";
+	setTimeout(() => {
+		qrPage.style.display = "none";
+	}, 300);
+}
+
+function downloadQR(){
+	let dataURL = userQR.querySelector('img').src;
+	downloadURI(dataURL, 'userQR.png')
+}
 
 //ID of the page to be displayed first.
 const startPageID = 0;
@@ -73,7 +120,7 @@ function showTextNode(textNodeIndex) {
 			button.classList.add("btn");
 			button.addEventListener("click", () => {
 				//Some buttons do specific events; for triggering those custom events;
-				if(option.onclick){
+				if (option.onclick) {
 					option.onclick();
 				}
 				selectOption(option);
