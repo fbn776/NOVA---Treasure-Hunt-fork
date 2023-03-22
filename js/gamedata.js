@@ -260,7 +260,7 @@ const textNodes = [
 				nextText: 13,
 			},
 			{
-				text: "Go to Jupiter",
+				text: "Go to Mars",
 				nextText: 16,
 			},
 		],
