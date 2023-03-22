@@ -306,7 +306,7 @@ const textNodes = [
 	{
 		id: 17,
 		text: "Perfection! Time to bid farewell to Mars",
-		image: "mars.png",
+		image: "mars.jpg",
 		options: [
 			{
 				text: "← Back",
