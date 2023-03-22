@@ -1,4 +1,4 @@
-const registerLink = "https://forms.gle/cfxtTFvN8LG1sC239";
+const registerLink = "google forms link here....";
 
 const textNodes = [
 	{
