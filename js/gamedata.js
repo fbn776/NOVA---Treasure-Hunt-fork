@@ -48,30 +48,30 @@ const textNodes = [
 				nextText: 1,
 			},
 			{
-				text: "ʻOumuamua! Hmm seems interesting",
+				text: "ʻComets! Hmm seems interesting",
 				nextText: 3,
 			},
 		],
 	},
 	{
 		id: 3,
-		text: "ʻOumuamua is the first known interstellar object detected passing through the Solar System. Do you know who discovered it?",
-		image: "ou.jpeg",
+		text: "Imagine you're a comet flying through our solar system. Which way would you be most likely to travel?",
+		image: "Solar-system-NASA.jpg",
 		options: [
 			{
-				text: "Karen Jean Meech",
+				text: "Like a clock ticking clockwise",
 				nextText: 4,
 			},
 			{
-				text: "Robert Weryk",
+				text: "Counterclockwise, like a merry-go-round",
 				nextText: 5,
 			},
 			{
-				text: "Robert Jedicke",
+				text: "Sideways, like a crab scuttling along",
 				nextText: 4,
 			},
 			{
-				text: "Marco Micheli",
+				text: "In a zigzag pattern, like a lightning bolt",
 				nextText: 4,
 			},
 		],
@@ -229,23 +229,23 @@ const textNodes = [
 	},
 	{
 		id: 13,
-		text: "Oh wow! We have reached Asteriod belt, the smallest and innermost known circumstellar disc in the Solar System. Do you know that about half its mass is contained in the four largest asteroids: Ceres, Vesta, Pallas, and Hygiea. Speaking of which can you guess the mass of the Asteriod belt?",
+		text: "We're heading out to the far reaches of our solar system now. Which planet has the longest year, taking the longest time to complete a single orbit around the sun?",
 		image: "asteroid-belt.png",
 		options: [
 			{
-				text: "4% mass of the Sun",
-				nextText: 15,
-			},
-			{
-				text: "4% mass of the Earth",
-				nextText: 15,
-			},
-			{
-				text: "4% mass of the Moon",
+				text: "Neptune, the icy giant",
 				nextText: 14,
 			},
 			{
-				text: "4% mass of the Jupiter",
+				text: "Jupiter, the gas giant",
+				nextText: 15,
+			},
+			{
+				text: "Venus, the hot and fiery planet",
+				nextText: 15,
+			},
+			{
+				text: "Saturn, the ringed beauty",
 				nextText: 15,
 			},
 		],
@@ -282,31 +282,31 @@ const textNodes = [
 	},
 	{
 		id: 16,
-		text: "Jupiter, the fifth and the largest planet in the solar system. Isn't it beautful? It has 80 known moons but do you know which is the largest?",
-		image: "jupiter.png",
+		text: "We're off to Mars next! How many moons does this red planet have? Hint: It's not zero, but it's not a lot either!",
+		image: "mars.png",
 		options: [
 			{
-				text: "Callisto",
+				text: "None, it's all alone out there",
 				nextText: 18,
 			},
 			{
-				text: "Europa",
+				text: "Just one, a loyal companion",
 				nextText: 18,
 			},
 			{
-				text: "lo",
-				nextText: 18,
-			},
-			{
-				text: "Ganymede",
+				text: "Two, a duo of satellites",
 				nextText: 17,
+			},
+			{
+				text: "Three, a trio of tiny moons",
+				nextText: 18,
 			},
 		],
 	},
 	{
 		id: 17,
-		text: "Perfection! Time to bid farewell to Jupiter",
-		image: "jupiter.png",
+		text: "Perfection! Time to bid farewell to Mars",
+		image: "mars.png",
 		options: [
 			{
 				text: "← Back",
@@ -2080,23 +2080,23 @@ const textNodes = [
 	// RS 4
 	{
 		id: 111,
-		text: "Which of these is an Orange Supergiant and why are they so?",
-		image: "RS4.jpg",
+		text: "A constellation that's shaped like a saucepan. What's the name of this constellation?",
+		image: "constellation..jpg",
 		options: [
 			{
-				text: "Zeta Ceiphei, because it's a hotter K-type Star",
+				text: "Orion",
+				nextText: 112,
+			},
+			{
+				text: "Ursa Major",
 				nextText: 113,
 			},
 			{
-				text: "Mu Ceiphei, because it crosses Chandrashekhar Limit",
+				text: "Cassiopeia",
 				nextText: 112,
 			},
 			{
-				text: "Antares, because it is 600 times massive than the Sun",
-				nextText: 112,
-			},
-			{
-				text: "Sirius, Because it's a bright object in the night sky",
+				text: "Canis Major",
 				nextText: 112,
 			},
 		],
