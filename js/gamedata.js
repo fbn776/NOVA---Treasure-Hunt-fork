@@ -3,7 +3,7 @@ const registerLink = "google forms link here....";
 const textNodes = [
 	{
 		id: 0,
-		text: `Space Odyssey: Online Treasure Hunt \n Fill the form before you start \n <a href='${registerLink}'>${registerLink}</a>`,
+		text: `Space Odyssey: Online Treasure Hunt<br>Fill the form before you start<br><a href='${registerLink}'>${registerLink}</a>`,
 		image: "astral1.png",
 		options: [
 			{
