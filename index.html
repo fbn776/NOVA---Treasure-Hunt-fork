@@ -23,7 +23,7 @@
 			href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap"
 			rel="stylesheet"
 		/>
-		<title>Online Treasure hunt</title>
+		<title>Space Odyssey: Online Treasure Hunt</title>
 	</head>
 
 	<body>
@@ -33,11 +33,16 @@
 				<p>Download this QR and upload this over on the submission form</p>
 				<div id="qrCont" class="full-flex"></div>
 				<br />
-				<p>And... Copy this text; you need to paste this text over on the submission form</p>
-				<div style="width: 100%; display: flex; justify-content: center;">
+				<p>
+					And... Copy this text; you need to paste this text over on the
+					submission form
+				</p>
+				<div style="width: 100%; display: flex; justify-content: center">
 					<div class="textBox">
-						<input class="text" id="qrText">
-						<button onclick="copyText(qrText)"><img src="images/copy.png" /></button>
+						<input class="text" id="qrText" />
+						<button onclick="copyText(qrText)">
+							<img src="images/copy.png" />
+						</button>
 					</div>
 				</div>
 				<br />
@@ -49,18 +54,16 @@
 				</button>
 			</div>
 		</div>
-
 		<div class="rules-menu menu-window full-flex">
 			<div class="start-menu-cont">
 				<img src="images/info.png" width="20%" /><br />
 				<ul class="help-ul">
-					<li>Rule 1....</li>
-					<li>Rule 2....</li>
-					<li>Rule 3....</li>
-					<li>Rule 4....</li>
-					<li>Rule 5....</li>
-					<li>Rule 6....</li>
-					<li>Rule 7....</li>
+					<li>Treasure hunt lasts for 6 hours after initiating it through the Google form.</li>
+					<li>Sequentially attempt the questions to receive clues for the treasure hunt.</li>
+					<li>Correctly answering certain no of questions provides participants with a clue.</li>
+					<li>Participants receives 8 clues after answering all questions to determine the final answer.</li>
+					<li>Upon completion, participants receive a downloadable QR code and text to upload along with the final answer to the final submission form.</li>
+					<li>The final submission form link is included in the QR code received after completing all steps</li>
 				</ul>
 				<br />
 				<button style="padding: 10px 15px" onclick="closeRulesPage()">
