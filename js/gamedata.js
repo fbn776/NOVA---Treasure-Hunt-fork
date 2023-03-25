@@ -2316,7 +2316,7 @@ const textNodes = [
 	{
 		id: 125,
 		text: "Oh its another clue! Keep this in mind or take a screenshot. It might help you crack the final answer.",
-		image: "Clue2.png",
+		image: "Clue2.jpg",
 		options: [
 			{
 				text: "← Back",
@@ -2331,7 +2331,7 @@ const textNodes = [
 	{
 		id: 126,
 		text: "There's another clue! Keep this in mind or take a screenshot. It might help you crack the final answer.",
-		image: "Clue3.png",
+		image: "Clue3.jpg",
 		options: [
 			{
 				text: "← Back",
@@ -2391,7 +2391,7 @@ const textNodes = [
 	{
 		id: 130,
 		text: "Oh that's a clue! Keep this in mind or take a screenshot. It might help you crack the final answer.",
-		image: "Clue7.png",
+		image: "Clue7.jpg",
 		options: [
 			{
 				text: "← Back",
@@ -2406,7 +2406,7 @@ const textNodes = [
 	{
 		id: 131,
 		text: "Woah it's a clue!! Keep this in mind or take a screenshot. It might help you crack the final answer.",
-		image: "Clue8.png",
+		image: "Clue8.jpg",
 		options: [
 			{
 				text: "← Back",
