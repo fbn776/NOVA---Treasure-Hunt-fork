@@ -5,7 +5,8 @@ const textNodes = [
 		id: 0,
 		text: `Space Odyssey: Online Treasure Hunt<br>Fill the form before you start<br><a href='${registerLink}'>${registerLink}</a>`,
 		image: "nova-logo.png",
-		imgStyle: "width: 100%; filter: drop-shadow(0.1px 0.1px 5px rgba(60,60,60,1))",
+		imgStyle:
+			"width: 100%; filter: drop-shadow(0.1px 0.1px 5px rgba(60,60,60,1))",
 		options: [
 			{
 				text: "Start",
@@ -14,7 +15,6 @@ const textNodes = [
 					if (userData.start) {
 						return false;
 					}
-
 					userData.start = Date.now();
 				},
 			},
@@ -36,6 +36,10 @@ const textNodes = [
 			{
 				text: "Are you curious? Let's see where it takes us",
 				nextText: 2,
+				onclick: () => {
+					//Reset states when starting.
+					state = {};
+				},
 			},
 		],
 	},
