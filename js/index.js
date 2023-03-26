@@ -6,15 +6,14 @@ const userData = {
 	end: null,
 };
 
-
 const mainCont = s(".main-cont");
 const startMenu = s(".start-menu");
 const nameInput = s("#nameInput");
 const rulesPage = s(".rules-menu");
-const qrPage = s('.qr-download-menu');
-const qrContElm = s('#qrCont');
+const qrPage = s(".qr-download-menu");
+const qrContElm = s("#qrCont");
 const qrDownloadBtn = s("#qrDownloadBtn");
-const qrText = s('#qrText');
+const qrText = s("#qrText");
 let userQR = createElement("div");
 
 function closeRulesPage() {
@@ -36,8 +35,8 @@ function getStarted() {
 		alert("Name cannot be empty! Please try again");
 		return false;
 	}
-	if(!isName(nameInput.value)){
-		alert("Name should only contain alphabetic characters and spaces")
+	if (!isName(nameInput.value)) {
+		alert("Name should only contain alphabetic characters and spaces");
 		return false;
 	}
 
@@ -48,8 +47,8 @@ function getStarted() {
 	});
 }
 
-function openQrDownloadPage(qr){
-	if(qrContElm.children.length === 0){
+function openQrDownloadPage(qr) {
+	if (qrContElm.children.length === 0) {
 		qrContElm.appendChild(userQR);
 	}
 
@@ -59,16 +58,16 @@ function openQrDownloadPage(qr){
 	}, 0);
 }
 
-function closeQrDownloadPage(){
+function closeQrDownloadPage() {
 	qrPage.style.transform = "translateY(100%)";
 	setTimeout(() => {
 		qrPage.style.display = "none";
 	}, 300);
 }
 
-function downloadQR(){
-	let dataURL = userQR.querySelector('img').src;
-	downloadURI(dataURL, 'userQR.png')
+function downloadQR() {
+	let dataURL = userQR.querySelector("img").src;
+	downloadURI(dataURL, "userQR.png");
 }
 
 //ID of the page to be displayed first.
@@ -110,7 +109,10 @@ function showTextNode(textNodeIndex) {
 	let img_dir = "images/";
 	qImg.src = img_dir.concat(textNode.image);
 	qImg.width = 300;
-
+	//Set style for the img element if 'imgStyle' is specified;
+	if (textNode.imgStyle) {
+		qImg.style = textNode.imgStyle;
+	}
 	qPic.appendChild(qImg);
 
 	textNode.options.forEach((option) => {

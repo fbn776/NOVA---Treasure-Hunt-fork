@@ -4,7 +4,8 @@ const textNodes = [
 	{
 		id: 0,
 		text: `Space Odyssey: Online Treasure Hunt<br>Fill the form before you start<br><a href='${registerLink}'>${registerLink}</a>`,
-		image: "astral1.png",
+		image: "nova-logo.png",
+		imgStyle: "width: 100%; filter: drop-shadow(0.1px 0.1px 5px rgba(60,60,60,1))",
 		options: [
 			{
 				text: "Start",
