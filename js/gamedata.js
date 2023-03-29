@@ -1,12 +1,11 @@
-const registerLink = "google forms link here....";
+const registerLink = "https://forms.gle/MxfT8SE6CXJpgF779";
 
 const textNodes = [
 	{
 		id: 0,
-		text: `Space Odyssey: Online Treasure Hunt<br>Fill the form before you start<br><a href='${registerLink}'>${registerLink}</a>`,
+		text: `Space Odyssey: Online Treasure Hunt<br>Fill the form before you start<br><a target="_blank" href='${registerLink}'>${registerLink}</a>`,
 		image: "nova-logo.png",
-		imgStyle:
-			"width: 100%; filter: drop-shadow(0.1px 0.1px 5px rgba(60,60,60,1))",
+		imgStyle: "width: 100%; filter: drop-shadow(0.1px 0.1px 5px rgba(60,60,60,1))",
 		options: [
 			{
 				text: "Start",
