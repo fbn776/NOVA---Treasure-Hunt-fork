@@ -14,7 +14,7 @@ const textNodes = [
 					if (userData.start) {
 						return false;
 					}
-					userData.start = Date.now();
+					userData.start = Date(Date.now()); //TODO check this again;
 				},
 			},
 			{
