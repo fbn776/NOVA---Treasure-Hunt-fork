@@ -1,4 +1,5 @@
 const registerLink = "https://forms.gle/MxfT8SE6CXJpgF779";
+const submissionLink = "https://forms.gle/P8MqTFSWSxB5GzHU8";
 
 const textNodes = [
 	{
@@ -14,7 +15,7 @@ const textNodes = [
 					if (userData.start) {
 						return false;
 					}
-					userData.start = Date(Date.now()); //TODO check this again;
+					userData.start = Date.now();
 				},
 			},
 			{
@@ -428,7 +429,7 @@ const textNodes = [
 				nextText: 132,
 				onclick: () => {
 					if (!userData.end) {
-						userData.end = new Date(Date.now()).toString();
+						userData.end = Date.now();
 						let data = JSON.stringify(userData);
 						data = encryptData(data, KEY);
 						new QRCode(userQR, {
@@ -2143,7 +2144,7 @@ const textNodes = [
 		image: "SAG1.jpeg",
 		options: [
 			{
-				text: "Einstein- Rosen bridge",
+				text: "Einstein-Rosen bridge",
 				nextText: 115,
 			},
 			{
@@ -2194,7 +2195,7 @@ const textNodes = [
 	// SAG 2
 	{
 		id: 117,
-		text: "Measurements shows that it has a radius of 22mn kilometres . Our habitat is 8 kilo parsec from sag A* , it's mass is enormous it can completely stretch out the space time fabric , each minute we spent here it's __ in Earth",
+		text: "Measurements shows that it has a radius of 22mn kilometers . Our habitat is 8 kilo parsec from sag A* , it's mass is enormous it can completely stretch out the space time fabric , each minute we spent here it's __ in Earth",
 		image: "sag2.gif",
 		options: [
 			{
@@ -2426,7 +2427,7 @@ const textNodes = [
 	// Final doc
 	{
 		id: 132,
-		text: "It seems you had a great journey! Scan the QR code and type in the keyword you decoded from the clues.",
+		text: `It seems you had a great journey! Scan the QR code or <a target='_blank' href='${submissionLink}'>click here</a> and type in the keyword you decoded from the clues along with your unique code and other details.`,
 		image: "quest.png",
 		options: [
 			{
