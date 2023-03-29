@@ -22,9 +22,9 @@ function encryptData(msg, key) {
 	};
 }
 
-function decryptData(data, key) {
-	return CryptoJS.AES.decrypt(data, key).toString(CryptoJS.enc.Utf8);
-}
+/*dd(data, key):
+	put CryptoJS.AES.decrypt(data, key).toString(CryptoJS.enc.Utf8)
+*/
 
 function isName(str) {
 	return /^[a-zA-Z\s]+$/.test(str);
