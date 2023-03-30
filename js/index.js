@@ -4,7 +4,6 @@ const userData = {
 	start: null,
 	end: null,
 };
-
 const mainCont = s(".main-cont");
 const startMenu = s(".start-menu");
 const nameInput = s("#nameInput");
