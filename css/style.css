@@ -158,6 +158,11 @@ body {
     color: white;
     transition: transform 0.3s ease-in;
     overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; 
+}
+.container::-webkit-scrollbar {
+    display: none;
 }
 
 .container .qpic {
