@@ -34,7 +34,7 @@ const textNode = [{
 	}, ...],
 }, ...];
 ```
-The code is structured like an choose your adventure book.
+The code is structured like a `choose your adventure` book.
 ###### Clues
 In code, each clue is an image with the file path;
 `images/Clue1.jpg`, `images/Clue2.jpg`, `images/Clue3.jpg`, `images/Clue4.jpg`, `images/Clue5.jpg`, `images/Clue6.jpg`, `images/Clue7.jpg`, `images/Clue8.jpg`
