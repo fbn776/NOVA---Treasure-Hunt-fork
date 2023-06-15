@@ -17,7 +17,7 @@ The tressure hunt was held in a flash quiz type format, with the player answerin
 `css/style.css` stylesheet that has all the css code.
 
 
-##### Game data structure
+#### Game data structure
 `js/gamedata.js` is the file that contains all the questions, answers, clues, and everything related to the tressure hunt itself.
 Each question, clues, other tressure hunt related stuffs are represented by an object in array, this array is named by `textNode` in `js/gamedata.js`
 
@@ -35,11 +35,11 @@ const textNode = [{
 }, ...];
 ```
 The code is structured like a `choose your adventure` book.
-###### Clues
+##### Clues
 In code, each clue is an image with the file path;
 `images/Clue1.jpg`, `images/Clue2.jpg`, `images/Clue3.jpg`, `images/Clue4.jpg`, `images/Clue5.jpg`, `images/Clue6.jpg`, `images/Clue7.jpg`, `images/Clue8.jpg`
 
-###### Google forms
+##### Google forms
 The game requires two google forms, one for registering users at the beginning and another one for the answer submission. 
 
 1st google forms should contain the Name, Email, Contact Number etc as required fields. Upon submission, the timestamp is recorded by the google forms and this time is used for evaluation. And users should return to the game and start it.
